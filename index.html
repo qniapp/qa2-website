@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA² - Quantum Puzzle Game</title>
+    <meta name="description" content="QA² は量子コンピューティングの世界を体験できるパズルゲームです。">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="particle-canvas" aria-hidden="true" role="presentation"></canvas>
+
+    <main>
+        <h1 class="logo">QA<sup>2</sup></h1>
+
+        <p class="description">
+            <budoux-ja>量子コンピューティングの世界を体験できるパズルゲーム。量子ゲートを操作し、美しいパターンを生み出そう。</budoux-ja>
+        </p>
+
+        <nav>
+            <a href="support.html">サポート</a>
+            <a href="privacy.html">プライバシーポリシー</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 QA² - All rights reserved.</p>
+    </footer>
+
+    <audio id="bgm-audio" loop preload="auto">
+        <source src="audio/BGM_Title.ogg" type="audio/ogg">
+        <source src="audio/BGM_Title.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="audio-control">
+        <button id="audio-toggle" class="audio-button" aria-label="BGM を再生">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none;">⏸</span>
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/budoux/bundle/budoux-ja.min.js"></script>
+    <script src="particles.js"></script>
+</body>
+</html>
