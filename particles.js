@@ -1,7 +1,5 @@
 /* global requestAnimationFrame, cancelAnimationFrame */
 // QA² Particle Animation System
-// Task 3.1: Canvas の初期化とリサイズ対応
-// Task 3.2: パーティクルシステムの実装
 
 /**
  * Particle クラス
@@ -233,8 +231,6 @@ class ParticleSystem {
 
   /**
      * アニメーションを開始
-     * Task 3.3: requestAnimationFrame によるアニメーションループ
-     * Requirements: 2.4, 2.5
      */
   start () {
     // すでに実行中の場合は二重起動しない
@@ -260,8 +256,6 @@ class ParticleSystem {
 
   /**
      * アニメーションフレーム処理
-     * Task 3.3: Canvas をクリアして再描画するフレーム更新処理
-     * Requirements: 2.4, 2.5
      */
   animate () {
     if (!this.isRunning) {
@@ -294,8 +288,6 @@ class ParticleSystem {
 
 /**
  * AudioPlayer クラス
- * Task 4.3: ユーザー操作による再生制御
- * Requirements: 3.4
  */
 class AudioPlayer {
   /**
@@ -408,7 +400,7 @@ if (typeof document !== 'undefined' && document.addEventListener) {
     // アニメーション開始
     particleSystem.start()
 
-    // オーディオプレーヤーを初期化 (Task 4.3)
+    // オーディオプレーヤーを初期化
     const audioPlayer = new AudioPlayer('bgm-audio', 'audio-toggle')
 
     // グローバルに公開（デバッグ用）

@@ -228,8 +228,6 @@ describe('ParticleSystem - Particle Generation', () => {
 
 /**
  * ParticleSystem 回転アニメーションループのテスト
- * Task 3.3: 回転アニメーションループを実装
- * Requirements: 2.4, 2.5
  */
 describe('ParticleSystem - Animation Loop', () => {
   let mockCanvas
@@ -435,8 +433,6 @@ describe('ParticleSystem - Animation Loop', () => {
 
 /**
  * AudioPlayer クラスのテスト
- * Task 4.3: ユーザー操作による再生制御を実装
- * Requirements: 3.4
  */
 describe('AudioPlayer', () => {
   let AudioPlayer
