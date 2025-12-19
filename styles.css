@@ -128,27 +128,37 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 150px);
   text-align: center;
   padding: var(--spacing-md);
 }
 
 /* Logo */
 .logo {
+position: relative;
+  display: inline-block;
+  font-family: 'Oxanium', system-ui, sans-serif;
   font-size: var(--font-size-logo);
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-text);
   margin-bottom: var(--spacing-md);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.6em;
   text-shadow:
     0 0 10px rgb(0 0 0 / 80%),
     0 0 20px rgb(0 0 0 / 50%),
     2px 2px 4px rgb(0 0 0 / 90%);
 }
 
-.logo sup {
-  font-size: 0.5em;
-  vertical-align: super;
+.logo-base {
+  display: inline-block;
+}
+
+.logo-sup {
+  position: absolute;
+  top: -0.35em;
+  right: -1.2em;
+  font-size: 0.58em;
+  font-weight: 500;
 }
 
 /* Description */
