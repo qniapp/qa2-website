@@ -11,7 +11,10 @@
     <canvas id="particle-canvas" aria-hidden="true" role="presentation"></canvas>
 
     <main>
-        <h1 class="logo">QA<sup>2</sup></h1>
+        <h1 class="logo">
+            <span class="logo-base">QA</span>
+            <span class="logo-sup">2</span>
+        </h1>
 
         <p class="description">
             <budoux-ja>量子コンピューティングの世界を体験できるパズルゲーム。量子ゲートを操作し、美しいパターンを生み出そう。</budoux-ja>
@@ -25,7 +28,15 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 QA² - All rights reserved.</p>
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <a href="https://www.tis.co.jp/termsofuse/index.html" target="_blank">
+                サイトのご利用について
+            </a>
+            <a href="https://www.tis.co.jp/tis_securitypolicy/index.html" target="_blank">
+                情報セキュリティ方針
+            </a>
+        </nav>
+        <p>&copy; <span id="year"></span> QA² - All rights reserved.</p>
     </footer>
 
     <audio id="bgm-audio" loop preload="auto">
@@ -42,5 +53,8 @@
 
     <script src="https://unpkg.com/budoux/bundle/budoux-ja.min.js"></script>
     <script src="particles.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
