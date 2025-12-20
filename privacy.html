@@ -79,9 +79,12 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 QA² - All rights reserved.</p>
+        <p>&copy; <span id="year"></span> TIS Inc. All rights reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/budoux/bundle/budoux-ja.min.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
