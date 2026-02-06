@@ -85,6 +85,12 @@ a:hover {
   opacity: 0.8;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
 /* Navigation */
 nav {
   display: flex;
