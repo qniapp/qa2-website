@@ -138,7 +138,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 250px);
   text-align: center;
   padding: var(--spacing-md);
 }
@@ -180,6 +180,26 @@ position: relative;
   text-shadow:
     0 0 8px rgb(0 0 0 / 80%),
     1px 1px 3px rgb(0 0 0 / 90%);
+}
+
+/* Store Badges */
+.store-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.store-badges a {
+  display: inline-flex;
+}
+
+.store-badges img {
+  height: 48px;
+  width: auto;
+  display: block;
 }
 
 /* Audio Control */
