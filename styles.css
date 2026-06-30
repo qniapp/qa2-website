@@ -74,6 +74,10 @@ p {
   margin-bottom: var(--spacing-sm);
 }
 
+budoux-ja {
+  display: block;
+}
+
 /* Links */
 a {
   color: var(--color-accent);
