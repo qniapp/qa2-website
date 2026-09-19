@@ -25,7 +25,7 @@ describe('index.html 構造テスト', () => {
     })
 
     test('上付き文字の 2 が使用されている', () => {
-      expect(htmlContent).toMatch(/<sup>2<\/sup>/)
+      expect(htmlContent).toMatch(/class="logo-sup">2<\/span>/)
     })
   })
 

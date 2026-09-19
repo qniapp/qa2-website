@@ -6,6 +6,25 @@
     <title>QA² - Quantum Puzzle Game</title>
     <meta name="description" content="QA² は量子コンピューティングの世界を体験できるパズルゲームです。">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            function detect() {
+                try {
+                    var params = new URLSearchParams(window.location.search);
+                    var override = params.get('lang');
+                    if (override === 'ja' || override === 'en') return override;
+                } catch (e) {}
+                var list = (navigator.languages && navigator.languages.length)
+                    ? navigator.languages
+                    : [navigator.language || navigator.userLanguage || 'en'];
+                for (var i = 0; i < list.length; i++) {
+                    if (String(list[i]).toLowerCase().indexOf('ja') === 0) return 'ja';
+                }
+                return 'en';
+            }
+            document.documentElement.lang = detect();
+        })();
+    </script>
 </head>
 <body>
     <canvas id="particle-canvas" aria-hidden="true" role="presentation"></canvas>
@@ -16,33 +35,33 @@
             <span class="logo-sup">2</span>
         </h1>
 
-        <p class="description">
+        <p class="description" data-i18n="description">
             <budoux-ja>量子コンピューティングの世界を体験できるパズルゲーム。量子ゲートを操作し、美しいパターンを生み出そう。</budoux-ja>
         </p>
 
         <nav>
-            <a href="presskit.html">プレスキット</a>
-            <a href="support.html">サポート</a>
-            <a href="privacy.html">プライバシーポリシー</a>
-            <a href="terms.html">利用約款</a>
+            <a href="presskit.html" data-i18n="navPresskit">プレスキット</a>
+            <a href="support.html" data-i18n="navSupport">サポート</a>
+            <a href="privacy.html" data-i18n="navPrivacy">プライバシーポリシー</a>
+            <a href="terms.html" data-i18n="navTerms">利用約款</a>
         </nav>
     </main>
 
     <footer>
         <div class="store-badges">
             <a href="https://apps.apple.com/jp/app/qa/id6747648497" target="_blank" rel="noopener noreferrer">
-                <img src="svg/badge_ios_ja_bk.svg" alt="App Store からダウンロード">
+                <img data-i18n-badge="ios" src="svg/badge_ios_ja_bk.svg" alt="App Store からダウンロード">
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.TIS.QA2&hl=ja" target="_blank" rel="noopener noreferrer">
-                <img src="svg/badge_android_ja.svg" alt="Google Play で手に入れよう">
+                <img data-i18n-badge="android" src="svg/badge_android_ja.svg" alt="Google Play で手に入れよう">
             </a>
         </div>
 
-        <nav class="footer-nav" aria-label="フッターナビゲーション">
-            <a href="https://www.tisi.jp/termsofuse/index.html" target="_blank">
+        <nav class="footer-nav" data-i18n-aria="footerNavLabel" aria-label="フッターナビゲーション">
+            <a href="https://www.tisi.jp/termsofuse/index.html" target="_blank" data-i18n="footerAbout">
                 サイトのご利用について
             </a>
-            <a href="https://www.tisi.jp/company_securitypolicy/" target="_blank">
+            <a href="https://www.tisi.jp/company_securitypolicy/" target="_blank" data-i18n="footerSecurity">
                 情報セキュリティ方針
             </a>
         </nav>
@@ -55,13 +74,14 @@
     </audio>
 
     <div class="audio-control">
-        <button id="audio-toggle" class="audio-button" aria-label="BGM を再生">
+        <button id="audio-toggle" class="audio-button" data-aria-play="BGM を再生" data-aria-pause="BGM を停止" aria-label="BGM を再生">
             <span class="play-icon">▶</span>
             <span class="pause-icon" style="display: none;">⏸</span>
         </button>
     </div>
 
     <script src="https://unpkg.com/budoux/bundle/budoux-ja.min.js"></script>
+    <script src="i18n.js"></script>
     <script src="particles.js"></script>
     <script src="common.js"></script>
 </body>
