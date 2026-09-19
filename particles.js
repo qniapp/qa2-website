@@ -355,16 +355,19 @@ class AudioPlayer {
      * Requirement 3.3: 再生/停止コントロール
      */
   updateButtonUI () {
+    const playLabel = this.button.getAttribute?.('data-aria-play') || 'BGM を再生'
+    const pauseLabel = this.button.getAttribute?.('data-aria-pause') || 'BGM を停止'
+
     if (this.isPlaying) {
       // 再生中: 停止アイコンを表示
       if (this.playIcon) this.playIcon.style.display = 'none'
       if (this.pauseIcon) this.pauseIcon.style.display = ''
-      this.button.setAttribute('aria-label', 'BGM を停止')
+      this.button.setAttribute('aria-label', pauseLabel)
     } else {
       // 停止中: 再生アイコンを表示
       if (this.playIcon) this.playIcon.style.display = ''
       if (this.pauseIcon) this.pauseIcon.style.display = 'none'
-      this.button.setAttribute('aria-label', 'BGM を再生')
+      this.button.setAttribute('aria-label', playLabel)
     }
   }
 
