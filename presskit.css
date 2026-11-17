@@ -91,6 +91,28 @@
     color: var(--color-text);
 }
 
+/* Trailer */
+.trailer-player {
+    max-width: 320px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.trailer-player video {
+    width: 100%;
+    aspect-ratio: 540 / 1170;
+    display: block;
+}
+
+.trailer-download {
+    margin-top: var(--spacing-md);
+    text-align: center;
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+}
+
 /* Screenshots */
 .section-note {
     font-size: var(--font-size-small);
